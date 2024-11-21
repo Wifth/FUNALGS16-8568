@@ -8,17 +8,17 @@ namespace veterinaria
 {
     public class Servicio
     {
-        string descripcion {  get; set; }
-        int precio { get; set; }
-        static void CrearS()
+        public string descripcion {  get; set; }
+        public int precio { get; set; }
+        public static void CrearS()
         {
 
         }
-        static void EliminarS()
+        public static void EliminarS()
         {
 
         }
-        static void ListarServicio()
+        public static void ListarServicio()
         {
 
         }

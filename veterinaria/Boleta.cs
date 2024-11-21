@@ -8,16 +8,22 @@ namespace veterinaria
 {
     public class Boleta
     {
-        int codigo { get; set; }
-        string mascota { get; set; }
-        string servicio1 { get; set; }
-        string servicio2 { get; set; }
-        int total { get; set; }
-        static void CrearB()
+        public int codigo { get; set; }
+        public Mascota mascota1 { get; set; }
+        public Servicio servicio1 { get; set; }
+        public Servicio servicio2 { get; set; }
+        public int total { get; set; }
+        public static void CrearB()
         {
-
+            Console.Write("Ingrese la mascota: ");
+            string mascota1 = Console.ReadLine();
+            Console.Write("Ingrese el primer servicio: ");
+            string servicio1 = Console.ReadLine();
+            Console.Write("Ingrese el segundo servicio: ");
+            string servicio2 = Console.ReadLine();
+            Console.Write("Ingrese el precio total: ");
         }
-        static void ListarBoleta()
+        public static void ListarBoleta()
         {
 
         }
