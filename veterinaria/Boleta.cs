@@ -13,7 +13,7 @@ namespace veterinaria
         public Servicio servicio1 { get; set; }
         public Servicio servicio2 { get; set; }
         public int total { get; set; }
-        public static void CrearB()
+        public void CrearB()
         {
             Console.Write("Ingrese la mascota: ");
             string mascota1 = Console.ReadLine();
@@ -23,9 +23,9 @@ namespace veterinaria
             string servicio2 = Console.ReadLine();
             Console.Write("Ingrese el precio total: ");
         }
-        public static void ListarBoleta()
+        public void ListarBoleta()
         {
-
+            Console.WriteLine("BOLETA:");
         }
     }
 }

@@ -10,15 +10,15 @@ namespace veterinaria
     {
         public string descripcion {  get; set; }
         public int precio { get; set; }
-        public static void CrearS()
+        public void CrearS()
         {
 
         }
-        public static void EliminarS()
+        public void EliminarS()
         {
 
         }
-        public static void ListarServicio()
+        public void ListarServicio()
         {
 
         }
