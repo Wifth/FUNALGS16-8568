@@ -18,17 +18,17 @@ Divida entre sus integrantes, el lider consolida y los integrantes uno hace lo d
 Debe tener una rama por integrante, el lider debe tener por lo menos 2 ramas: main y dev. debe trabajar y consolidar en dev
 */
 using System.ComponentModel.Design;
+using System;
 using veterinaria;
-int opc = -1;
+using System.Collections.Generic;
+List<Mascota> mascotas = new List<Mascota>();
+List<Servicio> servicios = new List<Servicio>();
+List<Boleta> boletas = new List<Boleta>();
+
 Boleta b = new Boleta();
 Mascota m = new Mascota();
 Servicio s = new Servicio();
-
-Mascota m1 = new Mascota();
-Mascota m2 = new Mascota();
-Mascota m3 = new Mascota();
-
-do
+while (true)
 {
     Console.WriteLine("BIENVENIDO AL MENÚ PRINCIPAL\n");
     Console.WriteLine("************ MENÚ ************\n");
@@ -38,7 +38,7 @@ do
     Console.WriteLine(" 0.   Salir");
     Console.WriteLine("\n******************************");
     Console.Write("Ingrese una opción: \n");
-    opc = int.Parse(Console.ReadLine());
+    int opc = int.Parse(Console.ReadLine());
 
     if (opc == 0) // OPCION: 0 | Salir
     {
@@ -59,25 +59,9 @@ do
         switch (opc)
         {
             case 0: Environment.Exit(0); break;
-            case 1:
-                Console.Clear();
-                Console.WriteLine("**** REGISTRO DE MASCOTA ****\n");
-                Console.Write("Ingrese el nombre de la 1ra mascota: ");
-                m1.nombre = Console.ReadLine();
-                Console.Write("Ingrese la edad de su mascota: ");
-                m1.edad = int.Parse(Console.ReadLine());
-                Console.Write("Ingrese la especie de su mascota: ");
-                m1.especie = Console.ReadLine();
-                Console.Clear();
-                Console.WriteLine("Mascotas registradas correctamente.\n\n");
-        break;
-            case 2: m.EliminarM(); break;
-            case 3:
-                Console.Clear();
-                Console.WriteLine("**************** Lista de mascotas ****************\n");
-                Console.WriteLine($"1. {m1.nombre}, de {m1.edad} año(s) - {m1.especie}");
-                Console.WriteLine("\n***************************************************\n\n");
-                break;
+            case 1: m.CrearM(mascotas); break;
+            case 2: m.EliminarM(mascotas); break;
+            case 3: m.ListarMascota(mascotas); break;
         }
     }
     else if (opc == 2) // OPCION: 2 | Servicios
@@ -95,9 +79,9 @@ do
         switch (opc)
         {
             case 0: Environment.Exit(0); break;
-            case 1: s.CrearS(); break;
-            case 2: s.EliminarS(); break;
-            case 3: s.ListarServicio(); break;
+            case 1: s.CrearS(servicios); break;
+            case 2: s.EliminarS(servicios); break;
+            case 3: s.ListarServicio(servicios); break;
         }
     }
     else if (opc == 3) // OPCION: 3 | Boleta
@@ -114,8 +98,8 @@ do
         switch (opc)
         {
             case 0: Environment.Exit(0); break;
-            case 1: b.CrearB(); break;
-            case 2: b.ListarBoleta(); break;
+            case 1: b.CrearB(mascotas,servicios,boletas); break;
+            case 2: b.ListarB(boletas); break;
         }
     }
-} while (opc != 0);
+}
